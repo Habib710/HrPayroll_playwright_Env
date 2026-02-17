@@ -1,4 +1,4 @@
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { Login } from "../pageActions/loginAction";
 
 
@@ -11,8 +11,12 @@ test.describe('Login Page testing', () => {
 
     test("Successful Sign Up with Valid credidantal user", async ({ page }) => {
         login = new Login(page);
+        await page.goto("https://hrpayroll.hrsoftbd.net");
         await login.clickOnLoginIcon();
         await login.login("sabah@gmail.com", "123456");
+
+        await expect(page).toHaveURL(/dashboard/);
+
 
     });
 
