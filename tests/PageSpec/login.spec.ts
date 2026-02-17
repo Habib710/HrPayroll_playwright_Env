@@ -20,4 +20,17 @@ test.describe('Login Page testing', () => {
 
     });
 
+    test("unsuccessful Sign Up with InValid credidantal user", async ({ page }) => {
+        login = new Login(page);
+        await page.goto("https://hrpayroll.hrsoftbd.net");
+        await login.clickOnLoginIcon();
+        await login.login("sabah@gmail.com", "123456");
+
+        const message = page.getByRole('alert')
+
+        await expect(message).toBeVisible();
+
+
+    });
+
 })
