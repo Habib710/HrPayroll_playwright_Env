@@ -23,4 +23,11 @@ test.describe('Login Page Testing', () => {
         await expect(message).toBeVisible();
     });
 
+    test("Unsuccessful login with invalid password", async ({ page }) => {
+        await login.login("sabah@gmail.com", "15600");
+
+        const message = page.getByRole('alert');
+        await expect(message).toBeVisible();
+    });
+
 });
