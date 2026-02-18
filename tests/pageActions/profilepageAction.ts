@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 import { profileObject } from '../PageObjects/profileObject';
 
-export class profile {
+export class Profile {
 
     readonly page: Page;
     readonly profileObject: profileObject;
