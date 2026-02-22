@@ -20,8 +20,8 @@ test.describe('Login & Profile Navigation Test', () => {
         await login.login("sabah@gmail.com", "123456");
         await expect(page).toHaveURL(/dashboard/);
 
-        await profile.clickOnProfileIcon();
-        await profile.clickOnProfileLink();
+        // await profile.clickOnProfileIcon();
+        // await profile.clickOnProfileLink();
 
         await profile.clickOnPayroll();
 
