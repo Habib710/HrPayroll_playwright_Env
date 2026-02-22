@@ -10,12 +10,16 @@ export class Profile {
         this.page = page;
         this.profileObject = new profileObject(page);
     }
+
     async clickOnProfileIcon() {
         await this.profileObject.profileIcon.click();
     }
 
     async clickOnProfileLink() {
         await this.profileObject.profileLink.click();
+    }
+    async clickOnPayroll() {
+        await this.profileObject.payroll.click();
     }
 
 

@@ -23,7 +23,12 @@ test.describe('Login & Profile Navigation Test', () => {
         await profile.clickOnProfileIcon();
         await profile.clickOnProfileLink();
 
-        await expect(page.locator('.profileContent')).toBeVisible();
+        await profile.clickOnPayroll();
+
+        await expect(page).toHaveURL(/payroll/);
+
+
+
 
     });
 

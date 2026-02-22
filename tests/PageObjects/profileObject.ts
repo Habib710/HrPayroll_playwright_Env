@@ -6,6 +6,7 @@ export class profileObject {
     readonly profileIcon: Locator;
 
     readonly profileLink: Locator;
+    readonly payroll: Locator;
 
 
 
@@ -14,7 +15,10 @@ export class profileObject {
 
         this.profileIcon = page.locator("//img[@alt='Profile']");
 
-        this.profileLink = page.getByText('Profile', { exact: true });
+        this.profileLink = page.locator("//ul[@class='dropdown-menu show']//li[2]");
+        this.payroll = page.getByRole('link', { name: 'Payroll' });
+
+
 
 
 
